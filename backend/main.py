@@ -6,6 +6,8 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
+from backend.data_service import load_data as load_data_backend
+
 warnings.filterwarnings("ignore")
 
 st.set_page_config(page_title="IPL Analytics", page_icon="🏏", layout="wide")
@@ -47,44 +49,7 @@ def section_heading(text):
 
 @st.cache_data(show_spinner=False)
 def load_data():
-    base = os.path.dirname(__file__)
-    matches_path = os.path.join(base, "matches.csv")
-    deliveries_path = os.path.join(base, "deliveries.csv")
-
-    if not os.path.exists(matches_path) or not os.path.exists(deliveries_path):
-        return None, None, None
-
-    matches = pd.read_csv(matches_path)
-    deliveries = pd.read_csv(deliveries_path)
-
-    matches.columns = matches.columns.str.strip().str.lower().str.replace(" ", "_")
-    deliveries.columns = deliveries.columns.str.strip().str.lower().str.replace(" ", "_")
-
-    if "batter" in deliveries.columns:
-        batter_col = "batter"
-    elif "batsman" in deliveries.columns:
-        batter_col = "batsman"
-    else:
-        batter_col = None
-
-    if "batsman_runs" not in deliveries.columns:
-        if "batter_runs" in deliveries.columns:
-            deliveries["batsman_runs"] = deliveries["batter_runs"]
-        elif "runs_off_bat" in deliveries.columns:
-            deliveries["batsman_runs"] = deliveries["runs_off_bat"]
-        else:
-            deliveries["batsman_runs"] = 0
-
-    if "player_dismissed" not in deliveries.columns:
-        deliveries["player_dismissed"] = np.nan
-
-    if "season" not in matches.columns and "date" in matches.columns:
-        matches["season"] = pd.to_datetime(matches["date"], errors="coerce").dt.year
-
-    if "winner" not in matches.columns:
-        matches["winner"] = "Unknown"
-
-    return matches, deliveries, batter_col
+    return load_data_backend()
 
 
 def style_chart(fig, title=None):
@@ -527,7 +492,20 @@ def page_chat():
 
 
 def main():
+    from login_ui import login_user
+
+    if not login_user():
+        return
+
     load_styles()
+
+    if st.session_state.get("user_email"):
+        st.caption(f"Signed in as {st.session_state.user_email}")
+
+    if st.sidebar.button("Logout"):
+        st.session_state.authenticated = False
+        st.session_state.pop("user_email", None)
+        st.rerun()
 
     matches, deliveries, batter_col = load_data()
     if matches is None:

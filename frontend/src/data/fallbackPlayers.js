@@ -1,0 +1,35 @@
+export const FALLBACK_PLAYERS = [
+  { id: "virat_kohli", name: "Virat Kohli", role: "batter", team: "RCB", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm medium", country: "India" },
+  { id: "rohit_sharma", name: "Rohit Sharma", role: "batter", team: "MI", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm offbreak", country: "India" },
+  { id: "ms_dhoni", name: "MS Dhoni", role: "batter", team: "CSK", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm medium", country: "India" },
+  { id: "jasprit_bumrah", name: "Jasprit Bumrah", role: "bowler", team: "MI", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm fast", country: "India" },
+  { id: "hardik_pandya", name: "Hardik Pandya", role: "allrounder", team: "MI", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm fast-medium", country: "India" },
+  { id: "shubman_gill", name: "Shubman Gill", role: "batter", team: "GT", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm offbreak", country: "India" },
+  { id: "ruturaj_gaikwad", name: "Ruturaj Gaikwad", role: "batter", team: "CSK", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm offbreak", country: "India" },
+  { id: "suryakumar_yadav", name: "Suryakumar Yadav", role: "batter", team: "MI", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm offbreak", country: "India" },
+  { id: "kl_rahul", name: "KL Rahul", role: "batter", team: "LSG", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm offbreak", country: "India" },
+  { id: "ravindra_jadeja", name: "Ravindra Jadeja", role: "allrounder", team: "CSK", battingStyle: "Left-hand bat", bowlingStyle: "Left-arm orthodox", country: "India" },
+  { id: "mohammed_siraj", name: "Mohammed Siraj", role: "bowler", team: "RCB", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm fast", country: "India" },
+  { id: "yuzvendra_chahal", name: "Yuzvendra Chahal", role: "bowler", team: "RCB", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm legbreak", country: "India" },
+  { id: "rashid_khan", name: "Rashid Khan", role: "bowler", team: "Gujarat Titans", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm legbreak", country: "Afghanistan" },
+  { id: "andre_russell", name: "Andre Russell", role: "allrounder", team: "KKR", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm fast", country: "West Indies" },
+  { id: "sunil_narine", name: "Sunil Narine", role: "bowler", team: "KKR", battingStyle: "Left-hand bat", bowlingStyle: "Left-arm spin", country: "West Indies" },
+  { id: "glenn_maxwell", name: "Glenn Maxwell", role: "allrounder", team: "RCB", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm offbreak", country: "Australia" },
+  { id: "faf_du_plessis", name: "Faf du Plessis", role: "batter", team: "RCB", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm legbreak", country: "South Africa" },
+  { id: "david_warner", name: "David Warner", role: "batter", team: "DC", battingStyle: "Left-hand bat", bowlingStyle: "Right-arm offbreak", country: "Australia" },
+  { id: "pat_cummins", name: "Pat Cummins", role: "bowler", team: "KKR", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm fast", country: "Australia" },
+  { id: "travis_head", name: "Travis Head", role: "batter", team: "SRH", battingStyle: "Left-hand bat", bowlingStyle: "Right-arm offbreak", country: "Australia" },
+  { id: "abhishek_sharma", name: "Abhishek Sharma", role: "batter", team: "SRH", battingStyle: "Left-hand bat", bowlingStyle: "Slow left-arm orthodox", country: "India" },
+  { id: "sanju_samson", name: "Sanju Samson", role: "batter", team: "RR", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm offbreak", country: "India" },
+  { id: "jos_buttler", name: "Jos Buttler", role: "batter", team: "RR", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm offbreak", country: "England" },
+  { id: "rishabh_pant", name: "Rishabh Pant", role: "batter", team: "DC", battingStyle: "Left-hand bat", bowlingStyle: "Right-arm offbreak", country: "India" },
+  { id: "axar_patel", name: "Axar Patel", role: "allrounder", team: "DC", battingStyle: "Left-hand bat", bowlingStyle: "Left-arm orthodox", country: "India" },
+  { id: "kuldeep_yadav", name: "Kuldeep Yadav", role: "bowler", team: "GT", battingStyle: "Left-hand bat", bowlingStyle: "Left-arm wrist-spin", country: "India" },
+  { id: "trent_boult", name: "Trent Boult", role: "bowler", team: "MI", battingStyle: "Left-hand bat", bowlingStyle: "Left-arm fast-medium", country: "New Zealand" },
+  { id: "mitchell_starc", name: "Mitchell Starc", role: "bowler", team: "KKR", battingStyle: "Left-hand bat", bowlingStyle: "Left-arm fast", country: "Australia" },
+  { id: "bhuvneshwar_kumar", name: "Bhuvneshwar Kumar", role: "bowler", team: "SRH", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm fast-medium", country: "India" },
+  { id: "shreyas_iyer", name: "Shreyas Iyer", role: "batter", team: "KKR", battingStyle: "Right-hand bat", bowlingStyle: "Right-arm offbreak", country: "India" }
+];
+
+export default FALLBACK_PLAYERS;
+

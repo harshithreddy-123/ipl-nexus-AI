@@ -1,0 +1,34 @@
+[
+  {
+    "id": "MATCH1",
+    "season": "2024",
+    "date": "2024-05-24",
+    "venue": "Wankhede Stadium",
+    "teamA": "Mumbai Indians",
+    "teamB": "Chennai Super Kings",
+    "status": "FINISHED",
+    "matchType": "T20",
+    "phase": "Death",
+    "toss": "CSK won the toss and elected to bat",
+    "scoreA": "178/6",
+    "scoreB": "161/8",
+    "winner": "Mumbai Indians",
+    "result": "MI won by 17 runs"
+  },
+  {
+    "id": "MATCH2",
+    "season": "2024",
+    "date": "2024-05-25",
+    "venue": "Eden Gardens",
+    "teamA": "Royal Challengers Bangalore",
+    "teamB": "Kolkata Knight Riders",
+    "status": "LIVE",
+    "matchType": "T20",
+    "phase": "Middle",
+    "toss": "KKR won the toss and elected to field",
+    "scoreA": "189/3",
+    "scoreB": "183/7",
+    "winner": "",
+    "result": "Live chase"
+  }
+]

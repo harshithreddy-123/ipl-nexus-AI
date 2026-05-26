@@ -1,0 +1,6 @@
+[
+  {"id": "MI", "name": "Mumbai Indians", "shortName": "MI", "homeVenue": "Wankhede Stadium", "colors": ["#004BA0", "#FFC627"]},
+  {"id": "CSK", "name": "Chennai Super Kings", "shortName": "CSK", "homeVenue": "M. A. Chidambaram Stadium", "colors": ["#FCDD43", "#0B3B0B"]},
+  {"id": "RCB", "name": "Royal Challengers Bangalore", "shortName": "RCB", "homeVenue": "M. Chinnaswamy Stadium", "colors": ["#A60000", "#FFC800"]},
+  {"id": "KKR", "name": "Kolkata Knight Riders", "shortName": "KKR", "homeVenue": "Eden Gardens", "colors": ["#3A1A4C", "#FFC93C"]}
+]

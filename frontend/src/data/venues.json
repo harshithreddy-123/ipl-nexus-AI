@@ -1,0 +1,5 @@
+[
+  {"id": "Wankhede Stadium", "name": "Wankhede Stadium", "city": "Mumbai", "capacity": 33000, "pitchType": "Balanced", "surface": "Hard", "country": "India"},
+  {"id": "Eden Gardens", "name": "Eden Gardens", "city": "Kolkata", "capacity": 68000, "pitchType": "Spin-friendly", "surface": "Dry", "country": "India"},
+  {"id": "M. Chinnaswamy Stadium", "name": "M. Chinnaswamy Stadium", "city": "Bangalore", "capacity": 40000, "pitchType": "Batting-friendly", "surface": "Hard", "country": "India"}
+]

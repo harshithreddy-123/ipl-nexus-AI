@@ -1,23 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  background: linear-gradient(to bottom right, #020617, #111827);
-  color: white;
-  font-family: Arial, sans-serif;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply m-0 font-sans text-sm text-gray-200 antialiased;
+    background: radial-gradient(circle at top left, rgba(34, 184, 217, 0.08), transparent 25%),
+      radial-gradient(circle at bottom right, rgba(232, 93, 38, 0.08), transparent 20%),
+      linear-gradient(180deg, #060b12 0%, #071425 48%, #081b34 100%);
+  }
+  body.light {
+    @apply bg-gray-50 text-gray-900;
+  }
+  body.dark {
+    @apply text-gray-200;
+    background: radial-gradient(circle at top left, rgba(34, 184, 217, 0.08), transparent 22%),
+      radial-gradient(circle at bottom right, rgba(232, 93, 38, 0.08), transparent 18%),
+      linear-gradient(180deg, #060b12 0%, #071425 48%, #081b34 100%);
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply rounded-[2rem] border border-white/10 bg-ipl-card/90 backdrop-blur-xl shadow-[0_28px_80px_-40px_rgba(0,0,0,0.55)];
+  }
+  .panel-card {
+    @apply rounded-3xl border border-white/10 bg-ipl-panel/85 backdrop-blur-xl;
+  }
+  .card {
+    @apply rounded-3xl border border-white/[0.08] bg-gradient-to-br from-ipl-card/95 via-ipl-card/80 to-ipl-card/90 backdrop-blur-sm
+      transition-all duration-200 hover:border-ipl-cyan/25 hover:shadow-[0_30px_70px_-30px_rgba(0,0,0,0.55)];
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+  .card:hover { transform: perspective(900px) rotateX(1.5deg) rotateY(-1.5deg) translateY(-4px); }
+  .card-light {
+    @apply rounded-3xl border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md;
+  }
+  .stat-value {
+    @apply text-xl font-bold tracking-tight text-ipl-gold;
+  }
+  .section-title {
+    @apply text-base font-semibold text-white;
+  }
+  .section-subtitle {
+    @apply text-sm text-gray-400;
+  }
+  .section-title-light {
+    @apply text-base font-semibold text-gray-900;
+  }
+  .input-field {
+    @apply w-full rounded-2xl border border-white/10 bg-black/25 px-3 py-2 text-sm text-white
+      placeholder:text-gray-500 outline-none transition
+      focus:border-ipl-cyan/50 focus:ring-1 focus:ring-ipl-cyan/30;
+  }
+  .input-field-light {
+    @apply w-full rounded-2xl border border-gray-200 bg-white px-3 py-2 text-sm
+      outline-none focus:border-ipl-cyan focus:ring-1 focus:ring-ipl-cyan/30;
+  }
+  .btn-primary {
+    @apply rounded-2xl bg-gradient-to-r from-ipl-orange to-ipl-orange/90 px-4 py-2 text-sm font-semibold text-white
+      transition hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary:active { transform: scale(0.98); }
+  .btn-ipl-ghost {
+    @apply rounded-2xl border border-white/10 bg-white/5 text-white px-4 py-2 text-sm font-medium transition
+      hover:bg-white/10 hover:text-ipl-cyan;
+  }
+  .btn-ipl-ghost:active { transform: scale(0.98); }
+
+  .scoreboard-card {
+    box-shadow: 0 18px 40px rgba(6,12,34,0.6);
+  }
+  .shadow-glow {
+    box-shadow: 0 0 60px rgba(34, 184, 217, 0.12);
+  }
+  .nav-link {
+    @apply text-xs font-medium text-gray-400 transition hover:text-ipl-cyan;
+  }
+
+  .nav-active {
+    position: relative;
+  }
+  .nav-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 3px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, rgba(255,160,0,0.95), rgba(0,230,255,0.9));
+    transform: scaleX(1);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  }
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
+  height: 6px;
 }
-
-::-webkit-scrollbar-track {
-  background: #111827;
-}
-
 ::-webkit-scrollbar-thumb {
-  background: #f97316;
-  border-radius: 20px;
+  @apply bg-ipl-orange/60 rounded-full;
 }

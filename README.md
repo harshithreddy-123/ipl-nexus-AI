@@ -1,46 +1,47 @@
 # IPL Nexus AI
 
-Monorepo-style layout: React UI in `frontend/`, analytics dashboard in `backend/`.
+Professional IPL analytics dashboard — batter vs bowler matchups, live scores (API-ready), and floating AI chat.
 
-## Frontend (Vite + React)
+## Run the app (recommended)
 
-From the **repository root** (`ipl-nexus-ai`, the folder that contains this `README.md`):
+**Terminal 1 — API** (serves CSV data from `backend/`):
+
+```powershell
+cd C:\Users\Reddy\OneDrive\ipl-nexus-ai\backend
+..\.venv\Scripts\pip.exe install fastapi uvicorn python-dotenv
+..\.venv\Scripts\uvicorn.exe api:app --reload --port 8000
+```
+
+**Terminal 2 — React UI**:
 
 ```powershell
 cd C:\Users\Reddy\OneDrive\ipl-nexus-ai
-npm install --prefix frontend
 npm run dev
 ```
 
-The dev server is served by the app under `frontend/`. If you see `ENOENT` / “Could not read package.json”, your shell is not in this folder (for example you are in `C:\Users\Reddy\OneDrive`). Run `cd` into `ipl-nexus-ai` first, then run `npm run dev` again.
+Open **http://localhost:5173** → login → single dashboard.
 
-## Backend (Streamlit)
+## API keys (optional)
+
+Copy `.env.example` to `.env` in the project root:
+
+- `CRICKET_API_KEY` — live scores (`backend/api.py`)
+- `GROQ_API_KEY` or `AI_API_KEY` — AI chat (`backend/api.py`)
+
+Never commit `.env`.
+
+## Streamlit (legacy dashboard)
 
 ```powershell
-cd backend
-..\.venv\Scripts\Activate.ps1
-streamlit run main.py
+.\.venv\Scripts\streamlit.exe run backend/main.py
 ```
 
-Place `matches.csv` and `deliveries.csv` next to `backend/main.py` (or adjust paths in the app).
+## Project layout
 
----
-
-Below is the original Vite template README for the scaffold under `frontend/` when applicable.
-
-## React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. See the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Path | Purpose |
+|------|---------|
+| `frontend/src/pages/Dashboard.jsx` | Main single-page dashboard |
+| `frontend/src/pages/Login.jsx` | Login screen |
+| `backend/api.py` | FastAPI for React |
+| `backend/data_service.py` | IPL CSV logic |
+| `backend/main.py` | Streamlit app (unchanged data logic) |
